@@ -1,7 +1,7 @@
 // 產品資料格式
 
 //用「具名匯入」的方式，並使用「解構語法」將createApp這個模組拿出來用
-import {createApp} from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.26/vue.esm-browser.min.js';
+import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.26/vue.esm-browser.min.js';
 
 //（app -> Vue實體）
 //先設好createApp的基本架構，再將資料放到return的{}內部，最後加上.mount
@@ -9,8 +9,8 @@ import {createApp} from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.26/vue.e
 //把所有資料指派給「const productData」
 
 createApp({
-  data(){
-    return{
+  data() {
+    return {
       products: [
         {
           category: "甜甜圈",
@@ -63,11 +63,12 @@ createApp({
           ]
         }
       ],
-      tempProduct:{},
+      //與按鈕功能v-on:click功能配合
+      //因為原先還沒按下按鈕時有「請選擇一個商品查看」的字樣，所以當監聽到click後，切換至此處temp:{}的狀態
+      temp: {},
     }
   },
-//用.mount('#id')來進行掛載
+  //用.mount('#id')來進行掛載
 }).mount('#app');
-
 
 
